@@ -87,7 +87,7 @@ class AspectJController {
         joinPoint.proceed() //执行原来的代码
     }
 
-    @Around("execution(* onResume()) && within(com.commontech.basemodule.databinding.base.BaseBindingFragment)")
+    @Around("execution(* onResume()) && within(com.your.BaseFragment)")
     @Throws(
         Throwable::class
     )
@@ -98,7 +98,7 @@ class AspectJController {
         joinPoint.proceed()
     }
 
-    @Around("execution(* onPause()) && within(com.commontech.basemodule.databinding.base.BaseBindingFragment)")
+    @Around("execution(* onPause()) && within(com.your.BaseFragment)")
     @Throws(
         Throwable::class
     )
@@ -109,11 +109,11 @@ class AspectJController {
         joinPoint.proceed()
     }
 
-    @Pointcut("execution(* onResume()) && within(com.commontech.basemodule.databinding.base.BaseBindingActivity)")
+    @Pointcut("execution(* onResume()) && within(com.your.BaseActivity)")
     fun openActivity() {
     }
 
-    @Pointcut("execution(* onDestroy()) && within(com.commontech.basemodule.databinding.base.BaseBindingActivity)")
+    @Pointcut("execution(* onDestroy()) && within(com.your.BaseActivity)")
     fun closeActivity() {
     }
 
