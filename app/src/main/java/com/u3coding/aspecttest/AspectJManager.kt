@@ -1,30 +1,28 @@
 package com.u3coding.aspecttest
-
-import android.util.Log
+import com.u3coding.log.ZLog
 
 object AspectJManager {
 
     private val TAG = "ASPECT"
     private var callBack: AspectJCallBack? =
-        //todo 使用日志记录框架
    object :AspectJCallBack{
         override fun onClick(className: String?, id: String?) {
-            Log.e(TAG, "$className:$id")
+            ZLog.e(TAG, "$className:$id")
         }
         override fun onActivityOpen(className: String?) {
-            Log.e(TAG, "$className")
+            ZLog.e(TAG, "$className")
         }
 
         override fun onActivityClose(className: String?) {
-            Log.e(TAG, "$className")
+            ZLog.e(TAG, "$className")
         }
 
         override fun onFragmentOpen(className: String?) {
-            Log.e(TAG, "$className")
+            ZLog.e(TAG, "$className")
         }
 
         override fun onFragmentClose(className: String?) {
-            Log.e(TAG, "$className")
+            ZLog.e(TAG, "$className")
         }
 
     }
