@@ -8,11 +8,6 @@ import org.aspectj.lang.annotation.Aspect
 import org.aspectj.lang.annotation.Pointcut
 
 
-/**
- * author : wangchang
- * date   : 2019-11-29 10:55
- * desc   : aop实现监听方法
- */
 @Aspect
 class AspectJController {
 
@@ -27,7 +22,6 @@ class AspectJController {
     @Around("onBindingClick()")
     @Throws(Throwable::class)
     fun onClickMethodBinding(joinPoint: ProceedingJoinPoint) {
-        //获取点击事件view对象及名称，可以对不同按钮的点击事件进行统计
         val target = joinPoint.target
         var className = ""
         if (target != null) {
@@ -61,7 +55,6 @@ class AspectJController {
     @Around("onClick()")
     @Throws(Throwable::class)
     fun onClickMethodAround(joinPoint: ProceedingJoinPoint) {
-        //获取点击事件view对象及名称，可以对不同按钮的点击事件进行统计
         val target = joinPoint.target
         var className = ""
         if (target != null) {
